@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Reflection;
+
 namespace PropertyTools.Wpf
 {
     using System;
@@ -515,9 +517,16 @@ namespace PropertyTools.Wpf
                             FormatString = column.FormatString,
                             Width = (GridLength)(glc.ConvertFromInvariantString(column.Width) ?? GridLength.Auto),
                             IsReadOnly = column.IsReadOnly,
-                            HorizontalAlignment = StringUtilities.ToHorizontalAlignment(column.Alignment.ToString(CultureInfo.InvariantCulture))
+                            HorizontalAlignment = StringUtilities.ToHorizontalAlignment(column.Alignment.ToString(CultureInfo.InvariantCulture)),
                         };
 
+                        if (column.ItemsSource != null)
+                        {
+                            // use instance.GetType to be able to fetch static properties also
+                            PropertyInfo p = instance.GetType().GetProperties().FirstOrDefault(x => x.Name == column.ItemsSource);
+                            IEnumerable itemsSource = p != null ? p.GetValue(instance) as IEnumerable : null;
+                            cd.ItemsSource = itemsSource;
+                        }
                         pi.Columns.Add(cd);
                     }
                 }

@@ -41,6 +41,21 @@ namespace ExampleLibrary
         [HeaderPlacement(HeaderPlacement.Collapsed)]
         public List<Item> List { get; set; }
 
+        [Browsable(false)]
+        public IEnumerable<Column> CollectionItemsSourcePropertyColumns { get; } = new[]
+        {
+            new Column("Name", "Name", null, "2*", 'L', itemSource: nameof(AvailableNames)),
+            new Column("Fraction", "%", "P2", "1*", 'R')
+        };
+
+        [Category("Lists|List of items with ItemsSource at property")]
+        [ColumnsProperty(nameof(CollectionItemsSourcePropertyColumns))]
+        [HeaderPlacement(HeaderPlacement.Collapsed)]
+        public List<Item> ItemsSourceAtPropertyList { get; set; }
+
+        [Browsable(false)]
+        public List<string> AvailableNames => new List<string>{"Carl", "Hugo", "Fred"};
+
         [Category("Lists|List of strings")]
         [ColumnsProperty(nameof(StringColumns))]
         [HeaderPlacement(HeaderPlacement.Collapsed)]
@@ -95,6 +110,7 @@ namespace ExampleLibrary
             }
 
             this.List = new List<Item>();
+            this.ItemsSourceAtPropertyList = new List<Item>();
             this.StringList = new List<string>();
             this.Collection = new Collection<Item>();
             this.Collection2 = new Collection<Item>();
