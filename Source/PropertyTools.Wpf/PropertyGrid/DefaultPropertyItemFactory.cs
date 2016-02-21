@@ -481,11 +481,20 @@ namespace PropertyTools.Wpf
                                  FormatString = ca.FormatString,
                                  Width = (GridLength)(glc.ConvertFromInvariantString(ca.Width) ?? GridLength.Auto),
                                  IsReadOnly = ca.IsReadOnly,
-                                 HorizontalAlignment = StringUtilities.ToHorizontalAlignment(ca.Alignment.ToString(CultureInfo.InvariantCulture))
-                             };
+                                 HorizontalAlignment = StringUtilities.ToHorizontalAlignment(ca.Alignment.ToString(CultureInfo.InvariantCulture)),
+                                 ColumnIndex = ca.ColumnIndex
+                            };
 
-                // TODO: sort by index
+                if (ca.ItemsSource != null)
+                {
+                    // use instance.GetType to be able to fetch static properties also
+                    var p = instance.GetType().GetProperties().FirstOrDefault(x => x.Name == ca.ItemsSource);
+                    var itemsSource = p != null ? p.GetValue(instance) as IEnumerable : null;
+                    cd.ItemsSource = itemsSource;
+                }
+
                 pi.Columns.Add(cd);
+                pi.Columns.Sort((x, y) => x.ColumnIndex.CompareTo(y.ColumnIndex));
             }
 
             var la = attribute as ListAttribute;

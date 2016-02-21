@@ -29,5 +29,11 @@ namespace PropertyTools.Wpf
         /// </summary>
         /// <value>The width.</value>
         public GridLength Width { get; set; }
+
+        /// <summary>
+        /// Gets or sets the column index.
+        /// </summary>
+        /// <value>The index.</value>
+        public int ColumnIndex { get; set; }
     }
 }

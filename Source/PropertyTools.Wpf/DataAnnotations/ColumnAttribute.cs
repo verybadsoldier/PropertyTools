@@ -55,6 +55,19 @@ namespace PropertyTools.DataAnnotations
         /// <summary>
         /// Initializes a new instance of the <see cref="ColumnAttribute" /> class.
         /// </summary>
+        /// <param name="columnIndex">Index of the column.</param>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <param name="header">The header.</param>
+        /// <param name="itemSource">Name of the item source property.</param>
+        public ColumnAttribute(int columnIndex, string propertyName, string header, string itemSource)
+            : this(columnIndex, propertyName, header)
+        {
+            this.ItemsSource = itemSource;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColumnAttribute" /> class.
+        /// </summary>
         /// <param name="columnIndex">The column index.</param>
         /// <param name="propertyName">The property name.</param>
         /// <param name="header">The header.</param>
@@ -62,6 +75,7 @@ namespace PropertyTools.DataAnnotations
         /// <param name="width">The width.</param>
         /// <param name="alignment">The alignment.</param>
         /// <param name="isReadOnly">The columns is read only if set to <c>true</c>.</param>
+        /// <param name="itemSource">Name of the item source property.</param>
         public ColumnAttribute(
             int columnIndex,
             string propertyName,
@@ -69,8 +83,9 @@ namespace PropertyTools.DataAnnotations
             string formatString,
             string width = "Auto",
             char alignment = 'C',
-            bool isReadOnly = false)
-            : this(columnIndex, propertyName, header)
+            bool isReadOnly = false, 
+            string itemSource = null)
+            : this(columnIndex, propertyName, header, itemSource)
         {
             this.FormatString = formatString;
             this.Width = width;
@@ -115,6 +130,11 @@ namespace PropertyTools.DataAnnotations
         /// <value>The name of the property.</value>
         public string PropertyName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the items source.
+        /// </summary>
+        /// <value>The name of the property.</value>
+        public string ItemsSource{ get; set; }
 #if !PCL
         /// <summary>
         /// When implemented in a derived class, gets a unique identifier for this <see cref = "T:System.Attribute" />.
