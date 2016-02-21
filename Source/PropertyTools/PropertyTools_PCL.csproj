@@ -48,59 +48,6 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="DataAnnotations\AutoUpdateTextAttribute.cs" />
-    <Compile Include="DataAnnotations\BasePathPropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\BrowsableAttribute.cs" />
-    <Compile Include="DataAnnotations\CategoryAttribute.cs" />
-    <Compile Include="DataAnnotations\ColumnAttribute.cs" />
-    <Compile Include="DataAnnotations\ColumnsPropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\CommentAttribute.cs" />
-    <Compile Include="DataAnnotations\ContentAttribute.cs" />
-    <Compile Include="DataAnnotations\ConverterAttribute.cs" />
-    <Compile Include="DataAnnotations\CheckableItemsAttribute.cs" />
-    <Compile Include="DataAnnotations\DefaultExtensionPropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\DescriptionAttribute.cs" />
-    <Compile Include="DataAnnotations\DirectoryPathAttribute.cs" />
-    <Compile Include="DataAnnotations\DisplayNameAttribute.cs" />
-    <Compile Include="DataAnnotations\EasyInsertAttribute.cs" />
-    <Compile Include="DataAnnotations\EnableByAttribute.cs" />
-    <Compile Include="DataAnnotations\FillTabAttribute.cs" />
-    <Compile Include="DataAnnotations\FilterPropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\FontAttribute.cs" />
-    <Compile Include="DataAnnotations\FontFamilySelectorAttribute.cs" />
-    <Compile Include="DataAnnotations\FontPreviewAttribute.cs" />
-    <Compile Include="DataAnnotations\FormatStringAttribute.cs" />
-    <Compile Include="DataAnnotations\HeaderPlacement.cs" />
-    <Compile Include="DataAnnotations\HeaderPlacementAttribute.cs" />
-    <Compile Include="DataAnnotations\HeightAttribute.cs" />
-    <Compile Include="DataAnnotations\HorizontalAlignment.cs" />
-    <Compile Include="DataAnnotations\HorizontalAlignmentAttribute.cs" />
-    <Compile Include="DataAnnotations\InputDirection.cs" />
-    <Compile Include="DataAnnotations\InputDirectionAttribute.cs" />
-    <Compile Include="DataAnnotations\InputFilePathAttribute.cs" />
-    <Compile Include="DataAnnotations\ListAttribute.cs" />
-    <Compile Include="DataAnnotations\ListItemItemsSourcePropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\OptionalAttribute.cs" />
-    <Compile Include="DataAnnotations\OutputFilePathAttribute.cs" />
-    <Compile Include="DataAnnotations\EnableByRadioButtonAttribute.cs" />
-    <Compile Include="DataAnnotations\ReadOnlyAttribute.cs" />
-    <Compile Include="DataAnnotations\ResettableAttribute.cs" />
-    <Compile Include="DataAnnotations\ItemHeaderPropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\SelectedValuePathAttribute.cs" />
-    <Compile Include="DataAnnotations\SelectorStyle.cs" />
-    <Compile Include="DataAnnotations\SelectorStyleAttribute.cs" />
-    <Compile Include="DataAnnotations\SlidableAttribute.cs" />
-    <Compile Include="DataAnnotations\SortIndexAttribute.cs" />
-    <Compile Include="DataAnnotations\ItemsSourcePropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\SpinnableAttribute.cs" />
-    <Compile Include="DataAnnotations\VisibleByAttribute.cs" />
-    <Compile Include="DataAnnotations\WidePropertyAttribute.cs" />
-    <Compile Include="DataAnnotations\WidthAttribute.cs" />
-    <Compile Include="DragDrop\DropPosition.cs" />
-    <Compile Include="DragDrop\IDragSource.cs" />
-    <Compile Include="DragDrop\IDropTarget.cs" />
-    <Compile Include="Observable\ExpressionUtilities.cs" />
-    <Compile Include="Observable\Observable.cs" />
     <Compile Include="Properties\AssemblyDescription.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -115,4 +62,3 @@
   </Target>
   -->
 </Project>
-

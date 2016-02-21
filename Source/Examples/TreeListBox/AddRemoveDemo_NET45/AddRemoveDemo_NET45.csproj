@@ -82,10 +82,6 @@
       <Project>{7168F82F-288A-42C4-9EB1-FBBE5112F211}</Project>
       <Name>PropertyTools.Wpf_NET45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\PropertyTools\PropertyTools_PCL.csproj">
-      <Project>{C365CBC8-FB8C-439D-87A4-FAFBB25852EA}</Project>
-      <Name>PropertyTools_PCL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -96,4 +92,3 @@
   </Target>
   -->
 </Project>
-
